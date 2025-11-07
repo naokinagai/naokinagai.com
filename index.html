@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Naoki Nagai — Composer & Sound Artist</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body { 
+        margin: 0;
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        background: #000;
+        overflow-x: hidden;
+      }
+      
+      .gradient-bg {
+        background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 25%, #2c3e6e 50%, #1a1f3a 75%, #0a0e27 100%);
+        background-size: 400% 400%;
+        animation: gradientShift 20s ease infinite;
+      }
+      
+      @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+      }
+      
+      .gold-accent {
+        color: #d4af37;
+      }
+      
+      .hero-text {
+        animation: fadeInUp 1s ease-out;
+      }
+      
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      
+      .card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: all 0.3s ease;
+      }
+      
+      .card:hover {
+        background: rgba(255, 255, 255, 0.08);
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      }
+      
+      .music-link {
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .music-link::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+        transition: left 0.5s ease;
+      }
+      
+      .music-link:hover::before {
+        left: 100%;
+      }
+      
+      .music-link:hover {
+        transform: scale(1.05);
+      }
+      
+      .floating {
+        animation: floating 3s ease-in-out infinite;
+      }
+      
+      @keyframes floating {
+        0%, 100% { transform: translateY(0px); }
+        50% { transform: translateY(-10px); }
+      }
+      
+      .spotify-embed {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body class="text-white">
+    
+    <!-- Hero Section -->
+    <section class="gradient-bg min-h-screen flex items-center justify-center px-6 py-20">
+      <div class="max-w-4xl w-full text-center hero-text">
+        <div class="floating mb-8">
+          <h1 class="text-7xl md:text-8xl font-extrabold mb-6 tracking-tight" style="text-shadow: 2px 4px 20px rgba(0,0,0,0.5);">
+            Naoki Nagai
+          </h1>
+        </div>
+        <p class="text-2xl md:text-3xl mb-8 font-light gold-accent" style="text-shadow: 1px 2px 10px rgba(0,0,0,0.5);">
+          Jazz Improviser · Composer
+        </p>
+        <p class="text-lg text-gray-300 opacity-90 mb-12 max-w-2xl mx-auto" style="text-shadow: 1px 2px 8px rgba(0,0,0,0.5);">
+          Exploring the spaces between notes, crafting spontaneous narratives through improvisation
+        </p>
+        
+        <!-- Music Platform Links -->
+        <div class="flex justify-center gap-4 flex-wrap">
+          <a href="https://open.spotify.com/artist/6fGDDDUxSAu4R4zwvV21GT" target="_blank" rel="noopener noreferrer" 
+             class="music-link bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg">
+            🎵 Listen on Spotify
+          </a>
+          <a href="https://music.apple.com/us/artist/naoki-nagai/1465871678" target="_blank" rel="noopener noreferrer" 
+             class="music-link bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-4 px-8 rounded-full shadow-lg">
+            🎧 Apple Music
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="bg-black py-20 px-6">
+      <div class="max-w-6xl mx-auto space-y-16">
+        
+        <!-- Spotify Embed Section -->
+        <div class="card rounded-2xl p-8">
+          <h2 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
+            Listen Now
+          </h2>
+          <div class="spotify-embed max-w-3xl mx-auto">
+            <!-- Replace with your actual Spotify artist embed or playlist -->
+            <iframe 
+              style="border-radius:12px" 
+              src="https://open.spotify.com/embed/artist/6fGDDDUxSAu4R4zwvV21GT?utm_source=generator&theme=0" 
+              width="100%" 
+              height="380" 
+              frameBorder="0" 
+              allowfullscreen="" 
+              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+              loading="lazy">
+            </iframe>
+          </div>
+        </div>
+
+        <!-- Discography Section -->
+        <div class="card rounded-2xl p-8">
+          <h2 class="text-3xl font-bold mb-8 text-center gold-accent">
+            Discography
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            
+            <!-- Album Cards -->
+            <div class="bg-gray-900 bg-opacity-50 rounded-xl p-6 hover:bg-opacity-70 transition">
+              <div class="aspect-square bg-gradient-to-br from-blue-900 to-indigo-900 rounded-lg mb-4 flex items-center justify-center">
+                <span class="text-6xl">🎹</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Abstract Impressions</h3>
+              <p class="text-gray-400 text-sm mb-3">Album</p>
+              <a href="https://open.spotify.com/artist/6fGDDDUxSAu4R4zwvV21GT" target="_blank" rel="noopener noreferrer" 
+                 class="text-blue-400 hover:text-blue-300 text-sm">
+                Listen →
+              </a>
+            </div>
+
+            <div class="bg-gray-900 bg-opacity-50 rounded-xl p-6 hover:bg-opacity-70 transition">
+              <div class="aspect-square bg-gradient-to-br from-indigo-900 to-purple-900 rounded-lg mb-4 flex items-center justify-center">
+                <span class="text-6xl">🎼</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Urban Spaces</h3>
+              <p class="text-gray-400 text-sm mb-3">Album</p>
+              <a href="https://open.spotify.com/artist/6fGDDDUxSAu4R4zwvV21GT" target="_blank" rel="noopener noreferrer" 
+                 class="text-blue-400 hover:text-blue-300 text-sm">
+                Listen →
+              </a>
+            </div>
+
+            <div class="bg-gray-900 bg-opacity-50 rounded-xl p-6 hover:bg-opacity-70 transition">
+              <div class="aspect-square bg-gradient-to-br from-slate-800 to-blue-900 rounded-lg mb-4 flex items-center justify-center">
+                <span class="text-6xl">🎶</span>
+              </div>
+              <h3 class="text-xl font-semibold mb-2">Driven</h3>
+              <p class="text-gray-400 text-sm mb-3">Single</p>
+              <a href="https://open.spotify.com/artist/6fGDDDUxSAu4R4zwvV21GT" target="_blank" rel="noopener noreferrer" 
+                 class="text-blue-400 hover:text-blue-300 text-sm">
+                Listen →
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- About & Philosophy Section -->
+        <div class="card rounded-2xl p-10">
+          <h2 class="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent">
+            About
+          </h2>
+          <div class="max-w-4xl mx-auto space-y-6 text-gray-300 text-lg leading-relaxed">
+            <p>
+              A jazz improviser and composer exploring the intersections of classical harmony, modal jazz, and contemporary improvisation. Each performance is an intimate conversation between musician, instrument, and moment.
+            </p>
+            <p>
+              Every piece is completely organic — played on the spot from start to finish. <strong class="text-white">No edits, no scores, no planning.</strong> Just pure improvisation as it comes. The piano becomes a vehicle for spontaneous composition, where structure meets freedom, and silence is as important as sound.
+            </p>
+            <p>
+              This approach creates music that is raw, honest, and unrepeatable — each recording captures a unique moment in time that can never be recreated exactly the same way again.
+            </p>
+          </div>
+        </div>
+
+        <!-- Call to Action -->
+        <div class="card rounded-2xl p-12 text-center">
+          <h2 class="text-3xl font-bold mb-4 gold-accent">Stay Connected</h2>
+          <p class="text-gray-300 text-lg mb-6">
+            Follow for new releases and live improvisation sessions
+          </p>
+          <div class="flex justify-center gap-4">
+            <a href="https://open.spotify.com/artist/6fGDDDUxSAu4R4zwvV21GT" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-300 hover:text-blue-400 transition text-2xl">
+              🎵
+            </a>
+            <a href="https://music.apple.com/us/artist/naoki-nagai/1465871678" target="_blank" rel="noopener noreferrer" 
+               class="text-gray-300 hover:text-indigo-400 transition text-2xl">
+              🎧
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 text-center border-t border-gray-800">
+      <p class="text-gray-500">
+        © <script>document.write(new Date().getFullYear())</script> Naoki Nagai · All Rights Reserved
+      </p>
+    </footer>
+
+  </body>
+</html>
